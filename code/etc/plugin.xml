@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin>
+    <Test_Test>
+        <info>
+            <name>Test Plugin</name>
+            <author>Red Stag Fulfillment, LLC</author>
+            <license>
+                <name>OSL 3.0</name>
+                <url>http://opensource.org/licenses/osl-3.0.php</url>
+            </license>
+            <homepage>https://github.com/ShipStream/plugin-test</homepage>
+            <description><![CDATA[
+                This is a <em>barebones</em> example to demonstrate what a plugin looks like.
+            ]]></description>
+        </info>
+        <config>
+            <whoami>
+                <type>text</type>
+                <sort_order>0</sort_order>
+                <comment>Enter a name. Be creative.</comment>
+            </whoami>
+            <service_url>
+                <type>select</type>
+                <source>Test_Test_Source_Serviceurl</source>
+                <sort_order>10</sort_order>
+                <comment>Choose the service to use to discover your IP address.</comment>
+            </service_url>
+        </config>
+    </Test_Test>
+</plugin>

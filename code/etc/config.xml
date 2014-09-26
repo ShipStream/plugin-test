@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Test_Test>
+            <version>0.1</version>
+        </Test_Test>
+    </modules>
+    <default>
+        <plugin>
+            <Test_Test>
+                <whoami>*Your Name Here*</whoami>
+                <service_url>http://bot.whatismyipaddress.com</service_url>
+                <events>
+                    <order>
+                        <created>1</created>
+                    </order>
+                </events>
+                <webhooks>1</webhooks>
+            </Test_Test>
+        </plugin>
+    </default>
+    <plugin_crontab>
+        <jobs>
+            <dummy_cron_job>
+                <schedule><cron_expr>5 * * * *</cron_expr></schedule><!-- Extended Unix crontab syntax -->
+                <run><class>Test_Test_Plugin::dummyCronJob</class></run><!-- {CLASS NAME}::{METHOD NAME} -->
+            </dummy_cron_job>
+        </jobs>
+    </plugin_crontab>
+</config>
