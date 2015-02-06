@@ -12,14 +12,21 @@
             <description><![CDATA[
                 This is a <em>barebones</em> example to demonstrate what a plugin looks like.
             ]]></description>
+            <oauth>
+                <enabled>1</enabled>
+                <signing_method>HMAC-SHA1</signing_method>
+                <required_config>whoami</required_config>
+            </oauth>
         </info>
         <config>
             <whoami>
+                <label>Who Am I</label>
                 <type>text</type>
                 <sort_order>0</sort_order>
                 <comment>Enter a name. Be creative.</comment>
             </whoami>
             <service_url>
+                <label>Service Url</label>
                 <type>select</type>
                 <source>Test_Test_Source_Serviceurl</source>
                 <sort_order>10</sort_order>
