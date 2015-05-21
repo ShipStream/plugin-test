@@ -98,9 +98,11 @@ class Test_Test_Plugin extends Plugin_Abstract
     /**
      * Get the URL that the user will visit to setup the OAuth connection
      *
+     * @param array $connectParams
+     * @param array $redirectParams
      * @return string
      */
-    public function oauthGetConnectButton()
+    public function oauthGetConnectButton($connectParams = array(), $redirectParams = array())
     {
         $apiKey = urlencode($this->getConfig('oauth_api_key'));
         $clientId = urlencode($this->getConfig('whoami'));
@@ -129,25 +131,6 @@ class Test_Test_Plugin extends Plugin_Abstract
         return [
             'TODO' => 'Return data from live API to prove working operation.'
         ];
-    }
-
-    /*
-     * Make these methods abstract
-     */
-
-    public function oauthGetRedirectUrl($params = array())
-    {
-        return ''; // TODO - web server controller url
-    }
-
-    public function oauthSetTokenData($secret)
-    {
-
-    }
-
-    public function oauthGetTokenData()
-    {
-
     }
 
 }
