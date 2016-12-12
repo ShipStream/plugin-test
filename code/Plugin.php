@@ -99,15 +99,14 @@ class Test_Test_Plugin extends Plugin_Abstract
      * Get the URL that the user will visit to setup the OAuth connection
      *
      * @param array $connectParams
-     * @param array $redirectParams
      * @return string
      */
-    public function oauthGetConnectButton($connectParams = array(), $redirectParams = array())
+    public function oauthGetConnectButton($connectParams = array())
     {
         $apiKey = urlencode($this->getConfig('oauth_api_key'));
         $clientId = urlencode($this->getConfig('whoami'));
         $scopes = urlencode('foo,bar,baz');
-        $redirect = urlencode($this->oauthGetRedirectUrl(['secret' => 'foo']));
+        $redirect = urlencode($this->oauthGetRedirectUrl());
         $url = "http://www.example.com/oauth_test.php?action=authorize&api_key=$apiKey&client=$clientId&scopes=$scopes&redirect_uri=$redirect";
         return '<a href="'.$url.'">Connect To OAuth Test</a>';
     }
