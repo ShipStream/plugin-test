@@ -1,6 +1,6 @@
 <?php
 
-class Test_Test_Plugin extends Plugin_Abstract
+class ShipStream_Test_Plugin extends Plugin_Abstract
 {
     /**
      * Fetches your public IP, saves it in the remote storage, fetches it and logs it.
@@ -101,7 +101,7 @@ class Test_Test_Plugin extends Plugin_Abstract
      * @param array $connectParams
      * @return string
      */
-    public function oauthGetConnectButton($connectParams = array())
+    public function oauthGetConnectButton($connectParams = [])
     {
         $apiKey = urlencode($this->getConfig('oauth_api_key'));
         $clientId = urlencode($this->getConfig('whoami'));

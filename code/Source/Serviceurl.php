@@ -1,6 +1,6 @@
 <?php
 
-class Test_Test_Source_Serviceurl implements Plugin_Source_Interface
+class ShipStream_Test_Source_Serviceurl implements Plugin_Source_Interface
 {
 
     /**

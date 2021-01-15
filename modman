@@ -1,2 +1,2 @@
-code             app/code/community/Test/Test
-Test_Test.xml    app/etc/modules/
+code                   app/code/community/ShipStream/Test
+ShipStream_Test.xml    app/etc/modules/

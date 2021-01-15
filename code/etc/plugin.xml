@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <plugin>
-    <Test_Test>
+    <ShipStream_Test>
         <info>
             <name>Test Plugin</name>
             <author>Red Stag Fulfillment, LLC</author>
@@ -28,10 +28,10 @@
             <service_url>
                 <label>Service Url</label>
                 <type>select</type>
-                <source>Test_Test_Source_Serviceurl</source>
+                <source>ShipStream_Test_Source_Serviceurl</source>
                 <sort_order>10</sort_order>
                 <comment>Choose the service to use to discover your IP address.</comment>
             </service_url>
         </config>
-    </Test_Test>
+    </ShipStream_Test>
 </plugin>
