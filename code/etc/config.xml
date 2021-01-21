@@ -15,16 +15,7 @@
                         <created>1</created>
                     </order>
                 </events>
-                <webhooks>1</webhooks>
             </ShipStream_Test>
         </plugin>
     </default>
-    <plugin_crontab>
-        <jobs>
-            <dummy_cron_job>
-                <schedule><cron_expr>5 * * * *</cron_expr></schedule><!-- Extended Unix crontab syntax -->
-                <run><class>ShipStream_Test_Plugin::dummyCronJob</class></run><!-- {CLASS NAME}::{METHOD NAME} -->
-            </dummy_cron_job>
-        </jobs>
-    </plugin_crontab>
 </config>

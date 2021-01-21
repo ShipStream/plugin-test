@@ -11,7 +11,10 @@ class ShipStream_Test_Plugin extends Plugin_Abstract
         if ( ! $serviceUrl) {
             throw new Exception('Service URL not configured.');
         }
-        $myIp = file_get_contents($serviceUrl);
+
+        $client = $this->getHttpClient(['base_uri' => $serviceUrl]);
+        $response = $client->get('');
+        $myIp = $response->getBody()->getContents();
 
         $this->setState('test', array(
             'my_ip' => $myIp,
@@ -41,6 +44,19 @@ class ShipStream_Test_Plugin extends Plugin_Abstract
         $this->log("Order # {$data['unique_id']} was created.");
     }
 
+    /**
+     * Respond to 'testCallback'
+     *
+     * @param $query
+     * @param $headers
+     * @param $data
+     * @return false|string
+     */
+    public function myTestCallback($query, $headers, $data)
+    {
+        return json_encode(['success' => TRUE]);
+    }
+
     /*
      * Webhook Methods
      */
@@ -55,7 +71,7 @@ class ShipStream_Test_Plugin extends Plugin_Abstract
      */
     public function verifyWebhook($query, $headers, $data)
     {
-        echo "Got it!";
+        echo "Got it!\n";
         $this->yieldWebhook();
         return TRUE;
     }
@@ -71,6 +87,7 @@ class ShipStream_Test_Plugin extends Plugin_Abstract
     public function handleWebhook($query, $headers, $data)
     {
         $this->log("Received webhook: (".http_build_query($query)."):\n$data");
+        return TRUE;
     }
 
     /*

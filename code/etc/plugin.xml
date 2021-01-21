@@ -3,7 +3,7 @@
     <ShipStream_Test>
         <info>
             <name>Test Plugin</name>
-            <author>Red Stag Fulfillment, LLC</author>
+            <author>ShipStream, LLC</author>
             <license>
                 <name>OSL 3.0</name>
                 <url>http://opensource.org/licenses/osl-3.0.php</url>
@@ -14,10 +14,18 @@
             ]]></description>
             <oauth>
                 <enabled>1</enabled>
-                <signing_method>HMAC-SHA1</signing_method>
                 <required_config>whoami</required_config>
             </oauth>
         </info>
+        <routes>
+            <testCallback>myTestCallback</testCallback>
+        </routes>
+        <actions>
+            <update_ip>
+                <label>Update IP</label>
+                <comment>Update the IP address stored in the plugin state data.</comment>
+            </update_ip>
+        </actions>
         <config>
             <whoami>
                 <label>Who Am I</label>
