@@ -12,7 +12,8 @@ class ShipStream_Test_Source_Serviceurl implements Plugin_Source_Interface
     public function getOptions(Plugin_Abstract $plugin)
     {
         return [
-            ['label' => 'bot.whatismyipaddress.com', 'value' => 'http://bot.whatismyipaddress.com'],
+            ['label' => 'whatismyipaddress.com (insecure)', 'value' => 'http://bot.whatismyipaddress.com'],
+            ['label' => 'ipify.org (secure)', 'value' => 'https://api.ipify.org'],
         ];
     }
 
