@@ -149,4 +149,24 @@ class ShipStream_Test_Plugin extends Plugin_Abstract
         ];
     }
 
+    /**
+     * @return bool
+     */
+    public function hasConnectionConfig()
+    {
+        return !! $this->getConfig('service_url');
+    }
+
+    /**
+     * @return string[]
+     * @throws Plugin_Exception
+     */
+    public function connectionDiagnostics()
+    {
+        $data = $this->getState('test');
+        return [
+            'Last updated at: '.(isset($data['last_updated_at']) ? date('c', $data['last_updated']) : '-')
+        ];
+    }
+
 }
