@@ -9,7 +9,7 @@
         <plugin>
             <ShipStream_Test>
                 <whoami>*Your Name Here*</whoami>
-                <service_url>http://bot.whatismyipaddress.com</service_url>
+                <service_url>http://ipinfo.io/ip</service_url>
                 <events>
                     <order>
                         <created>1</created>
