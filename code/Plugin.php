@@ -54,7 +54,27 @@ class ShipStream_Test_Plugin extends Plugin_Abstract
      */
     public function myTestCallback($query, $headers, $data)
     {
-        return json_encode(['success' => TRUE]);
+        $rawData = $data;
+        try {
+            $data = json_decode($data, TRUE, 20, JSON_THROW_ON_ERROR);
+
+            // Perform data validation
+            if ( ! isset($data['payload'])) {
+                throw new Plugin_Exception('Invalid data format.');
+            }
+
+            // Do something...
+
+            $this->resolveError($rawData);
+            return json_encode(['success' => TRUE]);
+        } catch (Plugin_Exception $e) {
+            $this->log($e->getMessage(), self::ERR, 'myTestCallback.log');
+        } catch (Exception $e) {
+            $this->log(get_class($e).': '.$e->getMessage(), self::ERR, 'myTestCallback.log');
+            $this->logException($e);
+        }
+        $this->reportError($e, $rawData, TRUE, 'My Callback');
+        throw $e;
     }
 
     /*
