@@ -169,4 +169,9 @@ class ShipStream_Test_Plugin extends Plugin_Abstract
         ];
     }
 
+    public function reinstall()
+    {
+        $this->update_ip();
+    }
+
 }
