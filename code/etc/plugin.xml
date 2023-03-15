@@ -16,6 +16,12 @@
                 <enabled>1</enabled>
                 <required_config>whoami</required_config>
             </oauth>
+            <callbacks>
+                <enabled>1</enabled>
+            </callbacks>
+            <webhooks>
+                <enabled>1</enabled>
+            </webhooks>
         </info>
         <routes>
             <testCallback>myTestCallback</testCallback>
