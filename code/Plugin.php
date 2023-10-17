@@ -178,10 +178,11 @@ class ShipStream_Test_Plugin extends Plugin_Abstract
     }
 
     /**
+     * @param bool $super
      * @return string[]
      * @throws Plugin_Exception
      */
-    public function connectionDiagnostics()
+    public function connectionDiagnostics(bool $super): array
     {
         $data = $this->getState('test');
         return [
@@ -189,9 +190,10 @@ class ShipStream_Test_Plugin extends Plugin_Abstract
         ];
     }
 
-    public function reinstall()
+    public function reinstall(): array
     {
         $this->update_ip();
+        return [];
     }
 
 }
